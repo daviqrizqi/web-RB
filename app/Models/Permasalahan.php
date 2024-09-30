@@ -26,9 +26,9 @@ class Permasalahan extends Model
     protected $fillable = [
         "id",
         "erb_type_id",
+        "user_id",
         "permasalahan",
         "sasaran",
-        "user_id",
         "indikator",
         "target",
         "unique_namespace",

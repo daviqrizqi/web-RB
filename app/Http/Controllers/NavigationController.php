@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NavigationController extends Controller
 {
     public function LoginView(Request $request){
+        if(Auth::check()){
+            if(Auth::user()->role == 'admincs'){
+                return redirect()->route('admin-dasboard');
+
+            }
+            return redirect()->route('dasboard');
+        }
         return view('login');
     }
     public function dashboardView(Request $request){

@@ -57,11 +57,11 @@ class ProcessController extends Controller
 
     public function createPermasalahan(Request $request)
     {
-        $user = Auth::user();
+        $user = auth()->user();
+        
         try {
             $request->validate([
                 'permasalahan' => 'required|string',
-                'user_id' =>  $user->id,
                 'sasaran' => 'required|string',
                 'indikator' => 'required|string',
                 'target' =>  'required|string',
@@ -74,6 +74,7 @@ class ProcessController extends Controller
                 'id' => Str::uuid(),
                 'unique_namespace' => $request->unique_namespace,
                 'erb_type_id' => $request->erb_type,
+                'user_id' =>  $user->id,
                 'permasalahan' =>  $request->permasalahan,
                 'sasaran' => $request->sasaran,
                 'indikator' => $request->indikator,
@@ -323,7 +324,7 @@ class ProcessController extends Controller
         try {
             $request->validate([
                 'id' => 'required|string',
-                'user_id' => $user->id,
+                
                 'rencana-aksi' => 'required|string',
                 'indikator' => 'required|string',
                 'satuan' => 'required|string',
@@ -337,6 +338,7 @@ class ProcessController extends Controller
             RencanaAksi::create([
                 'id' =>  $id,
                 'permasalahan_id' =>  $request->id,
+                'user_id' => $user->id,
                 'unique_namespace' => $request->unique_namespace,
                 'rencana_aksi' => $request->input('rencana-aksi'),
                 'indikator' => $request->indikator,

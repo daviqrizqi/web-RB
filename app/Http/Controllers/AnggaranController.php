@@ -88,7 +88,7 @@ class AnggaranController extends Controller
             TargetAnggaran::create([
                 'id' =>  Str::uuid(),
                 'rencana_aksi_id' =>  $request->id,
-                'user_id' => $data->id,
+                'user_id' => $user->id,
                 'twI' => $request->TWI,
                 'twII' => $request->TWII,
                 'twIII' => $request->TWIII,
