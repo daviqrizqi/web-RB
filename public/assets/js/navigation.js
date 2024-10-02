@@ -4,7 +4,6 @@ if (typeof baseUrl === 'undefined') {
     var baseUrl = "http://127.0.0.1:8010/api";
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const reformasiBirokrasiButton = document.querySelector('[data-collapse-toggle="dropdown-example"]');
     const dropdownExample = document.getElementById('dropdown-example');

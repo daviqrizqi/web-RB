@@ -1,11 +1,8 @@
-
 @extends('component.component-admin-dasboard.body-admin-dasboard')
-
 @section('judul', 'E-RB')
-
 @section('viewer')
-    <div class="mt-[5rem]">
-        
+
+    <div class="mt-[5rem]"> 
         <div class="container mx-auto mt-2 px-6">
             <div class="bg-white shadow-md rounded-lg p-6">
                 <div class="mb-6">
@@ -19,7 +16,7 @@
                 <h2 class="text-2xl font-semibold mb-4">RENCANA AKSI REFORMASI BIROKRASI TEMATIK DIGITALISASI STUNTING PADA DINAS KESEHATAN TAHUN 2024</h2>
     
                 <!-- Table -->
-                <div class="table-responsive">
+                <div class="overflow-x-auto">
                     <table id="approvedDataTable" class="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden">
                         <thead>
                             <tr>
@@ -144,6 +141,17 @@
             </div>
         </div>
     </div>
+ <!-- Modal for Reassign -->
+<div id="reassignModal" class="modal hidden fixed inset-0 flex items-center justify-center z-50">
+    <div class="modal-content bg-white p-4 rounded-lg shadow-lg w-full max-w-md sm:max-w-sm md:max-w-md lg:max-w-lg">
+        <h2 class="text-xl font-semibold mb-4">Send Revision Note</h2>
+        <textarea id="revisionNote" class="form-input w-full mb-4 h-32 border border-gray-300 p-2 rounded-lg" placeholder="Add your revision note here..."></textarea>
+        <div class="flex justify-end gap-2">
+            <button onclick="submitRevision()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Send</button>
+            <button onclick="closeModal()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">Cancel</button>
+        </div>
+    </div>
+</div>
 
     <script src="{{ asset('assets/js/js_admin/evaluasi.js') }}"></script>
 
