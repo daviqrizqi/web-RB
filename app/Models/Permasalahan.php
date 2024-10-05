@@ -44,13 +44,13 @@ class Permasalahan extends Model
             });
         });
     }
-    public function renaksi()
+    public function rencanaAksi()
     {
         return $this->hasMany(RencanaAksi::class, 'permasalahan_id', 'id');
     }
 
     public function allRelatedData()
     {
-        return $this->renaksi()->with(['targetAnggaran', 'targetPenyelesaian', 'realisasiAnggaran', 'realisasiPenyelesaian']);
+        return $this->rencanaAksi()->with(['targetAnggaran', 'targetPenyelesaian', 'realisasiAnggaran', 'realisasiPenyelesaian', 'reject']);
     }
 }

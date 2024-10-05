@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Reject;
 use App\Models\Permasalahan;
 use App\Models\TargetAnggaran;
 use App\Models\RealisasiAnggaran;
@@ -52,7 +53,7 @@ class RencanaAksi extends Model
     }
     public function permasalahan()
     {
-        return $this->belongsTo(Permasalahan::class, 'rencana_aksi_id', 'id');
+        return $this->belongsTo(Permasalahan::class, 'permasalahan_id', 'id');
     }
 
     public function targetAnggaran()
@@ -70,6 +71,10 @@ class RencanaAksi extends Model
     public function realisasiPenyelesaian()
     {
         return $this->hasOne(RealisasiPenyelesaian::class);
+    }
+    public function reject()
+    {
+        return $this->hasOne(Reject::class);
     }
 
     public function FileAssets()

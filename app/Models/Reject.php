@@ -26,4 +26,9 @@ class Reject extends Model
         'status',
     ];
 
+     public function rencanaAksi()
+    {
+        return $this->belongsTo(RencanaAksi::class);
+    }
+
 }

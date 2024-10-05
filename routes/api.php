@@ -10,7 +10,8 @@ use App\Http\Controllers\DasboardController;
 use App\Http\Controllers\PenyelesaianController;
 use App\Http\Controllers\Admin\Reject\RejectCpntroller;
 use App\Http\Controllers\Admin\Otorization\OtorizartionController;
-
+use App\Http\Controllers\EvaluasiController;
+use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -24,6 +25,12 @@ Route::controller(ProcessController::class)->group(function () {
     Route::get('/get-rencana-aksi', 'getRenaksi')->name('get-renaksi');
     Route::post('/get-rencana-aksi-id', 'getRenaksiById')->name('get-renaksi-id');
     Route::get('/get-rencana-aksi-permasalahan', 'getRenaksiByPermasalahan')->name('get-renaksi-id-permasalahan');
+});
+
+
+Route::controller(EvaluasiController::class)->group(function () {
+    Route::get('/get-evaluasi/{user_id}', 'getEvaluasi')->name('get-evaluasi');
+    Route::post('/update-evaluasi/{user_id}', 'updateEvaluasi')->name('update-evaluasi');
 });
 
 Route::controller(PenyelesaianController::class)->group(function () {

@@ -9,3 +9,4 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <title>@yield('judul')</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
