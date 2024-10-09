@@ -44,6 +44,10 @@ class NavigationController extends Controller
         return view('page.E_RB.temtatik.sunting.realisasi.realisasi_anggaran');
     }
 
+    public function EvaluatedUserView(Request $request){
+        return view('page.evaluasi_user');
+    }
+
     
 
     // Admin Navigation

@@ -30,6 +30,7 @@ Route::middleware(['AuthAccess'])->group(function () {
         Route::get('/target-anggaran', 'TargetAnggaranSutingView')->name('target-anggaran');
         Route::get('/realisasi-penyelesaian', 'RealisasiPenyelesaianSuntingView')->name('realisasi-penyelesaian');
         Route::get('/realisasi-anggaran', 'RelisasiAnggaranSuntingView')->name('realisasi-anggaran');
+        Route::get('/evaluasi','EvaluatedUserView')->name('evaluasi');
 
         //admin navigation
         Route::get('/admin-dasboard','DasboardAdminView')->name('admin-dasboard');

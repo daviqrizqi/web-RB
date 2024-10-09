@@ -20,6 +20,7 @@ class Reject extends Model
    
 
     protected $fillable = [
+        'id',
         'rencana_aksi_id',
         'user_id',
         'comment',
